@@ -21,7 +21,7 @@ class Lingkaran :public bidangDatar { /*lengkapi disini*/
 public:
     void input() {
         int l;
-        cout << "Masukkan jari-jari lingkaran: ";
+        cout << "Masukkan jejari: ";
         cin >> l;
         setX(l);
     }
@@ -58,16 +58,16 @@ public:
     cout << "Lingkaran dibuat " << endl;
     obj = new Lingkaran();
     obj->input();
-    cout << "Luas lingkaran :  " << obj->Luas() << endl;
-    cout << "Keliling lingkaran :  " << obj->Keliling() << endl;
+    cout << "Luas lingkaran =  " << obj->Luas() << endl;
+    cout << "Keliling lingkaran =  " << obj->Keliling() << endl;
     
     cout << endl;
 
     cout << "Bujursangkar dibuat" << endl;
     obj = new Bujursangkar;
     obj->input();
-    cout << "Luas bujursangkar :  " << obj->Luas() << endl;
-    cout << "Keliling bujursangkar :  " << obj->Keliling() << endl;
+    cout << "Luas bujursangkar =  " << obj->Luas() << endl;
+    cout << "Keliling bujursangkar =  " << obj->Keliling() << endl;
 
 
     return 0;
