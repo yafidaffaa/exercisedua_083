@@ -20,10 +20,10 @@ public:
 class Lingkaran :public bidangDatar { /*lengkapi disini*/ 
 public:
     void input() {
-        int r;
+        int l;
         cout << "Masukkan jari-jari lingkaran: ";
-        cin >> r;
-        setX(r);
+        cin >> l;
+        setX(l);
     }
 
     float Luas() {
@@ -37,10 +37,10 @@ public:
 class Bujursangkar :public bidangDatar { /*lengkapi disini*/ 
 public:
     void input() {
-        int s;
+        int b;
         cout << "Masukan sisi :";
-        cin >> s;
-        setX(s);
+        cin >> b;
+        setX(b);
     }
 
     float Luas() {
@@ -61,7 +61,7 @@ public:
     cout << "Luas lingkaran :  " << obj->Luas() << endl;
     cout << "Keliling lingkaran :  " << obj->Keliling() << endl;
     
-    
+    cout << endl;
 
     cout << "Bujursangkar dibuat" << endl;
     obj = new Bujursangkar;
