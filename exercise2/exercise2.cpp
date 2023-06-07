@@ -7,10 +7,9 @@ public:
 	bidangDatar() { //constructor
 		x = 0;
 	}
-	virtual void input() {} // fungsi yang menerima input dan mengirim input melalui
-	//fungsi setX untuk disimpan di x
-	virtual float Luas(int a) { return 0; } //fungsi untuk menghitung luas
-	virtual float Keliling(int a) { return 0; } //fungsi untuk menghitung keliling
+    virtual void input() = 0; // fungsi yang menerima input dan mengirim input melaluifungsi setX untuk disimpan di x
+    virtual float Luas() = 0; //fungsi untuk menghitung luas
+    virtual float Keliling() = 0; //fungsi untuk menghitung keliling
 	void setX(int a) { //fungsi untuk memberi/mengirim nilai pada x
 		this->x = a;
 	}
@@ -27,12 +26,12 @@ public:
         setX(r);
     }
 
-    float Luas(int a) {
-        return 3.14 * a * a;
+    float Luas() {
+        return 3.14 * getX() * getX();
     }
 
-    float Keliling(int a) {
-        return 2 * 3.14 * a;
+    float Keliling() {
+        return 2 * 3.14 * getX();
     }
 };
 class Bujursangkar :public bidangDatar { /*lengkapi disini*/ 
@@ -44,45 +43,32 @@ public:
         setX(s);
     }
 
-    float Luas(int a) {
-        return a * a;
+    float Luas() {
+        return getX() * getX();
     }
 
-    float Keliling(int a) {
-        return 4 * a;
+    float Keliling() {
+        return 4 * getX();
     }
 };
 int main() {
-    Lingkaran lingkaran;
-    Bujursangkar bujursangkar;
-
+  
     bidangDatar* obj;
 
-    int pilih;
-    cout << "Pilih objek: " << endl;
-    cout << "1. Lingkaran" << endl;
-    cout << "2. Bujursangkar" << endl;
-    cout << "Pilihan: ";
-    cin >> pilih;
-
-    if (pilih == 1) {
-        obj = &lingkaran;
-    }
-    else if (pilih == 2) {
-        obj = &bujursangkar;
-    }
-    else {
-        cout << "Pilihan tidak valid!" << endl;
-        return 0;
-    }
-
+    cout << "Lingkaran dibuat " << endl;
+    obj = new Lingkaran();
     obj->input();
-    int x = obj->getX();
-    float luas = obj->Luas(x);
-    float keliling = obj->Keliling(x);
+    cout << "Luas lingkaran :  " << obj->Luas() << endl;
+    cout << "Keliling lingkaran :  " << obj->Keliling() << endl;
+    
+    
 
-    cout << "Luas: " << luas << endl;
-    cout << "Keliling: " << keliling << endl;
+    cout << "Bujursangkar dibuat" << endl;
+    obj = new Bujursangkar;
+    obj->input();
+    cout << "Luas bujursangkar :  " << obj->Luas() << endl;
+    cout << "Keliling bujursangkar :  " << obj->Keliling() << endl;
+
 
     return 0;
 }
